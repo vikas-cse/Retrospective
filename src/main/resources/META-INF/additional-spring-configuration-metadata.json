@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "retrospective.pagesize.default",
+  "type": "java.lang.String",
+  "description": "default page size for retrospective list"
+}]}
