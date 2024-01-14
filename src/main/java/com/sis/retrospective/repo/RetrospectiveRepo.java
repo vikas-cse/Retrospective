@@ -1,4 +1,4 @@
-package com.sis.retrospective.dao;
+package com.sis.retrospective.repo;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

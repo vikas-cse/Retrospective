@@ -7,8 +7,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import com.sis.retrospective.dao.FeedbackRepo;
-import com.sis.retrospective.dao.RetrospectiveRepo;
+import com.sis.retrospective.repo.FeedbackRepo;
+import com.sis.retrospective.repo.RetrospectiveRepo;
 import com.sis.retrospective.exception.GenericException;
 import com.sis.retrospective.model.Feedback;
 import com.sis.retrospective.model.GenericResponse;
