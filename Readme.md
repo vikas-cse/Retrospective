@@ -65,4 +65,8 @@ This is a Spring boot application which allows users to create Retrospective for
     "type": "positive"
   }``
 
-  
+ Some Additional Changes
+ ------------------------------
+* record or separate DTO class should be used instead of same Entity object to avoid exposing any internal info to the user.    
+* More Junits to be added.  
+* Instead of one generic Exception, more exceptions can be added based on error type and with proper http status code.   

@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sis.retrospective.repo.FeedbackRepo;
@@ -22,9 +23,11 @@ public class RetrospectiveServiceImpl implements RetrospectiveService {
 
 	Logger LOGGER = LoggerFactory.getLogger(RetrospectiveServiceImpl.class);
 
-	private final RetrospectiveRepo retrospectiveRepo = new RetrospectiveRepo();
+	@Autowired
+	private RetrospectiveRepo retrospectiveRepo;
 
-	private final FeedbackRepo feedbackRepo = new FeedbackRepo();
+	@Autowired
+	private FeedbackRepo feedbackRepo;
 
 	@Override
 	public GenericResponse createRetrospective(Retrospective retrospective) throws GenericException {

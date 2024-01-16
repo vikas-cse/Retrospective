@@ -38,8 +38,6 @@ public class RetrospectiveControllerTest {
 	
 	@InjectMocks
 	RetrospectiveController retrospectiveController;
-	
-   
 
     @BeforeEach
     public void setUp() {

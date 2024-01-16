@@ -29,7 +29,7 @@ public class RetrospectiveController {
 	@Autowired
 	RetrospectiveService retrospectiveService;
 
-	@PostMapping(path = "/retrospectives")
+	@PostMapping("/retrospectives")
 	@ResponseStatus(HttpStatus.CREATED)
 	public GenericResponse createRetrospective(@RequestBody @Valid Retrospective retrospective)
 			throws GenericException {
