@@ -34,15 +34,13 @@ public class RetrospectiveServiceTest {
 	
 	@InjectMocks
 	RetrospectiveController retrospectiveController;
-	
-   
 
     @BeforeEach
     public void setUp() {
     }
     
     @Test
-    public void getRetrospectiveList() throws Exception {
+    public void TestGetRetrospectiveListWithMockedData() throws Exception {
     	
     	Retrospective retrospective = new Retrospective("test name", "testSummary", List.of("UserA", "UserB"), LocalDate.now());
     	RetrospectiveListPage retrospectiveListPage = new RetrospectiveListPage(1, 1, 1);
@@ -55,27 +53,6 @@ public class RetrospectiveServiceTest {
       	      .accept(MediaType.APPLICATION_JSON))
             .andExpect(status().is2xxSuccessful())
             .andExpect(jsonPath("$.totalRecords").value("1"));
-    	
-      
-    }
-    
-    @Test
-    public void createFeedback() throws Exception {
-    	
-    	Retrospective retrospective = new Retrospective("test name", "testSummary", List.of("UserA", "UserB"), LocalDate.now());
-    	RetrospectiveListPage retrospectiveListPage = new RetrospectiveListPage(1, 1, 1);
-    	retrospectiveListPage.setRetrospectives(List.of(retrospective));
-        when(retrospectiveService.getRetrospectiveList(10, 1)).thenReturn(retrospectiveListPage);
-      
-    	mockMvc.perform( MockMvcRequestBuilders
-      	      .get("/retrospectives")
-      	      .contentType(MediaType.APPLICATION_JSON)
-      	      .accept(MediaType.APPLICATION_JSON))
-            .andExpect(status().is2xxSuccessful())
-            .andExpect(jsonPath("$.totalRecords").value("1"));
-    	
-      
     }
     
 }
-

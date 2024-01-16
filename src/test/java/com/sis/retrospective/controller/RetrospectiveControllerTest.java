@@ -44,7 +44,7 @@ public class RetrospectiveControllerTest {
     }
 
     @Test
-    public void createRetrospectiveWithoutDate() throws Exception 
+    public void WhenCreateRetrospectiveWithoutDate_BadRequest() throws Exception
     {
     	mockMvc.perform( MockMvcRequestBuilders
       	      .post("/retrospectives")
@@ -57,7 +57,7 @@ public class RetrospectiveControllerTest {
     }
     
     @Test
-    public void createRetrospectiveWithEmptyUserList() throws Exception 
+    public void WhenCreateRetrospectiveWithEmptyUserList_BadRequest() throws Exception
     {
     	mockMvc.perform( MockMvcRequestBuilders
       	      .post("/retrospectives")
@@ -70,7 +70,7 @@ public class RetrospectiveControllerTest {
     }
     
     @Test
-    public void createRetrospectiveSuccessfully() throws Exception 
+    public void WhenCreateRetrospectiveValidValues_Success() throws Exception
     {
     	mockMvc.perform( MockMvcRequestBuilders
       	      .post("/retrospectives")
@@ -82,7 +82,7 @@ public class RetrospectiveControllerTest {
     }
     
     @Test
-    public void createFeedbackWithoutUsername() throws Exception 
+    public void WhenCreateFeedbackWithoutUsername_BadRequest() throws Exception
     {
     	mockMvc.perform( MockMvcRequestBuilders
       	      .post("/retrospectives/testName/feedback")
